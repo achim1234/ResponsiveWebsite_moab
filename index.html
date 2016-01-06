@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Webapp</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Benötig für JQuery Mobile -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script src="script.js"></script>
+
+
+
+</head>
+<body onload="init();">
+
+
+<!--Tab 1-->
+<div data-role="page" id="pageone">
+	<div data-role="header">
+		<h1>Welcome to my page!</h1>
+		<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-icon="plus" class="ui-btn-active ui-state-persist">One</a></li>
+					<li><a href="#pagetwo" data-icon="info">Two</a></li>
+				</ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+
+	<div data-role="main" class="ui-content">
+			<!--Name eingeben-->
+			<div data-role="fieldcontain">
+				<label for="name">Name eingeben:</label>
+				<input type="text" name="name" id="name" value="" />
+			</div>
+
+			<!--Slider Alter einstellen-->
+			<div data-role="fieldcontain">
+				<label for="slider-2">Alter einstellen:</label>
+				<input type="range" name="sliderAlter" id="sliderAlter" value="20" min="10" max="100"/>
+			</div>
+
+			<!--Switch Geschlecht-->
+			<div data-role="fieldcontain">
+				<label for="flip-2">Geschlecht auswählen:</label>
+				<select name="flipGeschlecht" id="flipGeschlecht" data-role="slider">
+					<option value="weiblich">w</option>
+					<option value="männlich">m</option>
+				</select>	
+			</div>
+
+			<!--Button Speichern-->
+			<button class="ui-btn" id="save_button">Speichern</button>
+
+			<!--Button Liste löschen-->
+			<button class="ui-btn" id="delete_button">Löschen</button>
+
+		</div>
+
+	<div data-role="footer">
+		<h1>My Footer</h1>
+	</div><!-- /footer -->
+</div><!-- /pageone ende -->
+
+
+<!--Tab 2-->
+<div data-role="page" id="pagetwo">
+	<div data-role="header">
+		<h1>Welcome to my page!</h1>
+		<div data-role="navbar">
+				<ul>
+					<li><a href="#pageone" data-icon="plus">One</a></li>
+					<li><a href="#" data-icon="info" class="ui-btn-active ui-state-persist">Two</a></li>
+				</ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+
+	<div data-role="main" class="ui-content">
+			
+			<ul id="datalist">
+				<script type="text/javascript">
+					getLocalStorageData();
+					showData();
+				</script>
+			</ul>
+
+	</div>
+
+	<div data-role="footer">
+		<h1>My Footer</h1>
+	</div><!-- /footer -->
+</div><!-- /pagetwo ende -->
+
+
+
+</body>
+</html>
